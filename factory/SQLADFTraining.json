@@ -1,0 +1,9 @@
+{
+	"name": "SQLADFTraining",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "013cdb2c-a5ea-4a65-9599-614db1d68fa4",
+		"tenantId": "090bfcc9-dce7-45eb-99f7-38d414a3e024"
+	}
+}
