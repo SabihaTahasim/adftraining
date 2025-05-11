@@ -126,7 +126,7 @@
 				]
 			},
 			{
-				"name": "Delete1",
+				"name": "delete files from source",
 				"type": "Delete",
 				"dependsOn": [
 					{
@@ -149,7 +149,7 @@
 				}
 			},
 			{
-				"name": "delete_files_from source",
+				"name": "de",
 				"type": "Delete",
 				"dependsOn": [],
 				"policy": {
