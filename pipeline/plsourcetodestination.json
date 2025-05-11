@@ -49,7 +49,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_source",
+						"referenceName": "source",
 						"type": "DatasetReference"
 					}
 				],
