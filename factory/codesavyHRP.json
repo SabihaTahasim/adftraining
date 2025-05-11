@@ -1,0 +1,9 @@
+{
+	"name": "codesavyHRP",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "64678e40-3f2b-4863-ad71-8d0d628eed72",
+		"tenantId": "090bfcc9-dce7-45eb-99f7-38d414a3e024"
+	}
+}
