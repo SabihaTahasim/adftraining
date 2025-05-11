@@ -1,10 +1,6 @@
 {
 	"name": "destination",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "LS_BlobStorage",
-			"type": "LinkedServiceReference"
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
