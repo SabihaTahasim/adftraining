@@ -47,20 +47,14 @@
 					"items": {
 						"value": "@activity('Get Metadata').output.childItems",
 						"type": "Expression"
-					}
+					},
+					"isSequential": false
 				}
 			},
 			{
 				"name": "source to destination",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "loopfiles",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
