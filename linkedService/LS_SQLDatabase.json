@@ -4,15 +4,11 @@
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"server": "codesavyhrp.database.windows.net",
-			"database": "HRP",
+			"server": "adfetltraining.database.windows.net",
+			"database": "hrp",
 			"encrypt": "mandatory",
 			"trustServerCertificate": false,
 			"authenticationType": "SystemAssignedManagedIdentity"
-		},
-		"connectVia": {
-			"referenceName": "AzureIRR",
-			"type": "IntegrationRuntimeReference"
 		}
 	}
 }
