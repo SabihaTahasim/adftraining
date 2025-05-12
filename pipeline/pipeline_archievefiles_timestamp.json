@@ -307,7 +307,7 @@
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
 									"endtime": {
-										"type": "String"
+										"type": "Datetime"
 									},
 									"Filesdeleted": {
 										"type": "String"
