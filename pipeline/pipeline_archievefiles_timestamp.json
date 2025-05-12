@@ -185,7 +185,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"ArchieveFilename": {
-											"value": "{concat(variables('FirstValue'),'_',formatDateTime(utcNow(),'yyyyMMdd'),'.',variables('Extension'))}",
+											"value": "@{concat(variables('FirstValue'),'_',formatDateTime(utcNow(),'yyyyMMdd'),'.',variables('Extension'))}",
 											"type": "Expression"
 										}
 									}
