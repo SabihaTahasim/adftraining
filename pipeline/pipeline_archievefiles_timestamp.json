@@ -211,7 +211,7 @@
 							"typeProperties": {
 								"variableName": "FirstValue",
 								"value": {
-									"value": "@first(split(item().name,','))",
+									"value": "@first(split(item().name,'.'))",
 									"type": "Expression"
 								}
 							}
@@ -235,7 +235,7 @@
 							"typeProperties": {
 								"variableName": "Extension",
 								"value": {
-									"value": "@last(split(item().name,','))",
+									"value": "@last(split(item().name,'.'))",
 									"type": "Expression"
 								}
 							}
