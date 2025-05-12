@@ -379,7 +379,7 @@
 							"typeProperties": {
 								"variableName": "starttime",
 								"value": {
-									"value": "@concat(utcnow())",
+									"value": "@{concat(utcnow())}",
 									"type": "Expression"
 								}
 							}
