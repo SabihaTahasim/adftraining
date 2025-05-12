@@ -383,7 +383,7 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "starttime",
+								"variableName": "start time",
 								"value": {
 									"value": "@{concat(utcnow())}",
 									"type": "Expression"
@@ -407,11 +407,68 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"variableName": "endtime",
+								"variableName": "end time",
 								"value": {
 									"value": "@{concat(utcnow())}",
 									"type": "Expression"
 								}
+							}
+						},
+						{
+							"name": "Aduit Log_copy1",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[usp_auditing]",
+								"storedProcedureParameters": {
+									"endtime": {
+										"value": {
+											"value": "@variables('end time')",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"Filesdeleted": {
+										"value": {
+											"value": "@item().name",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"Pipeline": {
+										"value": {
+											"value": "@pipeline().Pipeline",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"PipelineRunID": {
+										"value": {
+											"value": "@pipeline().RunId",
+											"type": "Expression"
+										},
+										"type": "String"
+									},
+									"starttime": {
+										"value": {
+											"value": "@variables('start time')",
+											"type": "Expression"
+										},
+										"type": "String"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "LS_SQLDatabase",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
@@ -429,6 +486,12 @@
 				"type": "String"
 			},
 			"endtime": {
+				"type": "String"
+			},
+			"end time": {
+				"type": "String"
+			},
+			"start time": {
 				"type": "String"
 			}
 		},
