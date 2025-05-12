@@ -302,7 +302,11 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [],
+							"userProperties": [
+								{
+									"name": "endtime"
+								}
+							],
 							"typeProperties": {
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
