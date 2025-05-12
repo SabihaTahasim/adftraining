@@ -49,7 +49,7 @@
 						"value": "@activity('Get Metadata').output.childItems",
 						"type": "Expression"
 					},
-					"isSequential": false,
+					"isSequential": true,
 					"activities": [
 						{
 							"name": "source to destination",
@@ -307,19 +307,15 @@
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
 									"endtime": {
-										"value": "",
 										"type": "Datetime"
 									},
 									"Filesdeleted": {
-										"value": "",
 										"type": "String"
 									},
 									"Pipeline": {
-										"value": "",
 										"type": "String"
 									},
 									"PipelineRunID": {
-										"value": "",
 										"type": "String"
 									},
 									"starttime": {
