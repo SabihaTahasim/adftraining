@@ -332,7 +332,10 @@
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
 									"endtime": {
-										"value": "",
+										"value": {
+											"value": "@variables('endtime')",
+											"type": "Expression"
+										},
 										"type": "String"
 									},
 									"Filesdeleted": {
@@ -357,7 +360,10 @@
 										"type": "String"
 									},
 									"starttime": {
-										"value": null,
+										"value": {
+											"value": "@variables('starttime')",
+											"type": "Expression"
+										},
 										"type": "String"
 									}
 								}
