@@ -120,7 +120,7 @@
 							"type": "Copy",
 							"dependsOn": [
 								{
-									"activity": "source to destination",
+									"activity": "Extension of the file",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -176,14 +176,120 @@
 							"outputs": [
 								{
 									"referenceName": "ds_source_to_archieve",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"ArchieveFilename": {
+											"value": "{concat(variables('FirstValue'),'_',formatDateTime(utcNow(),'yyyyMMdd'),'.',variables('Extension'))}",
+											"type": "Expression"
+										}
+									}
 								}
 							]
+						},
+						{
+							"name": "First Name",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "source to destination",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "FirstValue",
+								"value": {
+									"value": "@first(split(item().name,','))",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "Extension of the file",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "First Name",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Extension",
+								"value": {
+									"value": "@last(split(item().name,','))",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "delete the files",
+							"type": "Delete",
+							"dependsOn": [
+								{
+									"activity": "archieve",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"dataset": {
+									"referenceName": "ds_source_getmetadata",
+									"type": "DatasetReference",
+									"parameters": {
+										"Filename": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								},
+								"logStorageSettings": {
+									"linkedServiceName": {
+										"referenceName": "LS_BlobStorage",
+										"type": "LinkedServiceReference"
+									}
+								},
+								"enableLogging": true,
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								}
+							}
 						}
 					]
 				}
 			}
 		],
+		"variables": {
+			"FirstValue": {
+				"type": "String"
+			},
+			"Extension": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
