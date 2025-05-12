@@ -1,16 +1,25 @@
 {
-	"name": "DelimitedText4",
+	"name": "ds_source_getmetadata",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BlobStorage",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Filename": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "destination"
+				"fileName": {
+					"value": "@dataset().Filename",
+					"type": "Expression"
+				},
+				"container": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
@@ -19,31 +28,23 @@
 		},
 		"schema": [
 			{
-				"name": "EmployeeID",
+				"name": "DepartmentID",
 				"type": "String"
 			},
 			{
-				"name": "FirstName",
+				"name": "DepartmentName",
 				"type": "String"
 			},
 			{
-				"name": "LastName",
+				"name": "Manager",
 				"type": "String"
 			},
 			{
-				"name": "Department",
+				"name": "Location",
 				"type": "String"
 			},
 			{
-				"name": "Position",
-				"type": "String"
-			},
-			{
-				"name": "Salary",
-				"type": "String"
-			},
-			{
-				"name": "JoiningDate",
+				"name": "Budget",
 				"type": "String"
 			}
 		]

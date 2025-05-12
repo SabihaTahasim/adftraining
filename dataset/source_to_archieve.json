@@ -1,5 +1,5 @@
 {
-	"name": "DS_Source_to_destination",
+	"name": "source_to_archieve",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BlobStorage",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "employee_data_large.csv",
+				"fileName": "employee_data.csv",
 				"container": "source"
 			},
 			"columnDelimiter": ",",

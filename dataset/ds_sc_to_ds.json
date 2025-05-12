@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText3",
+	"name": "ds_sc_to_ds",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BlobStorage",

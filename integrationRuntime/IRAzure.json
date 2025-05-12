@@ -1,5 +1,5 @@
 {
-	"name": "AzureIRR",
+	"name": "IRAzure",
 	"properties": {
 		"type": "Managed",
 		"typeProperties": {

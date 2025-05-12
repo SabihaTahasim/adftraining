@@ -1,5 +1,5 @@
 {
-	"name": "DS_copy_destination",
+	"name": "ds_getmetadata_source",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BlobStorage",
@@ -10,13 +10,34 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "destination"
+				"container": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "DepartmentID",
+				"type": "String"
+			},
+			{
+				"name": "DepartmentName",
+				"type": "String"
+			},
+			{
+				"name": "Manager",
+				"type": "String"
+			},
+			{
+				"name": "Location",
+				"type": "String"
+			},
+			{
+				"name": "Budget",
+				"type": "String"
+			}
+		]
 	}
 }

@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText2",
+	"name": "ds_source_wildcard",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_BlobStorage",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "destination"
+				"container": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
