@@ -314,7 +314,7 @@
 							"type": "SqlServerStoredProcedure",
 							"dependsOn": [
 								{
-									"activity": "archieve",
+									"activity": "endtime",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -383,6 +383,30 @@
 									"type": "Expression"
 								}
 							}
+						},
+						{
+							"name": "endtime",
+							"type": "SetVariable",
+							"dependsOn": [
+								{
+									"activity": "archieve",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "endtime",
+								"value": {
+									"value": "@concat(utcnow())",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
@@ -396,6 +420,9 @@
 				"type": "String"
 			},
 			"starttime": {
+				"type": "String"
+			},
+			"endtime": {
 				"type": "String"
 			}
 		},
