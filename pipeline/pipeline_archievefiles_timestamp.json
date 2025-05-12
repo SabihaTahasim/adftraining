@@ -333,7 +333,7 @@
 								"storedProcedureParameters": {
 									"endtime": {
 										"value": "",
-										"type": "DateTime"
+										"type": "String"
 									},
 									"Filesdeleted": {
 										"value": {
@@ -358,7 +358,7 @@
 									},
 									"starttime": {
 										"value": null,
-										"type": "DateTime"
+										"type": "String"
 									}
 								}
 							},
@@ -403,7 +403,7 @@
 							"typeProperties": {
 								"variableName": "endtime",
 								"value": {
-									"value": "@concat(utcnow())",
+									"value": "@{concat(utcnow())}",
 									"type": "Expression"
 								}
 							}
