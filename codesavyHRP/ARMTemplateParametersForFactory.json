@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "codesavyHRP"
+		},
+		"LS_BlobStorage_connectionString": {
+			"value": ""
+		},
+		"LS_SQLDatabase_properties_typeProperties_server": {
+			"value": "adfetltraining.database.windows.net"
+		},
+		"LS_SQLDatabase_properties_typeProperties_database": {
+			"value": "hrp"
+		}
+	}
+}
