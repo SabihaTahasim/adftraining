@@ -54,7 +54,14 @@
 						{
 							"name": "source to destination",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "starttime",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -329,14 +336,24 @@
 										"type": "DateTime"
 									},
 									"Filesdeleted": {
+										"value": {
+											"value": "@item().name",
+											"type": "Expression"
+										},
 										"type": "String"
 									},
 									"Pipeline": {
-										"value": "",
+										"value": {
+											"value": "@pipeline().Pipeline",
+											"type": "Expression"
+										},
 										"type": "String"
 									},
 									"PipelineRunID": {
-										"value": "",
+										"value": {
+											"value": "@pipeline().RunId",
+											"type": "Expression"
+										},
 										"type": "String"
 									},
 									"starttime": {
@@ -349,6 +366,23 @@
 								"referenceName": "LS_SQLDatabase",
 								"type": "LinkedServiceReference"
 							}
+						},
+						{
+							"name": "starttime",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "starttime",
+								"value": {
+									"value": "@concat(utcnow())",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
@@ -359,6 +393,9 @@
 				"type": "String"
 			},
 			"Extension": {
+				"type": "String"
+			},
+			"starttime": {
 				"type": "String"
 			}
 		},
