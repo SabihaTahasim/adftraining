@@ -245,7 +245,7 @@
 							"type": "Delete",
 							"dependsOn": [
 								{
-									"activity": "archieve",
+									"activity": "Aduit Log",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -282,6 +282,55 @@
 									"recursive": true,
 									"enablePartitionDiscovery": false
 								}
+							}
+						},
+						{
+							"name": "Aduit Log",
+							"type": "SqlServerStoredProcedure",
+							"dependsOn": [
+								{
+									"activity": "archieve",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"storedProcedureName": "[dbo].[usp_auditing]",
+								"storedProcedureParameters": {
+									"endtime": {
+										"value": "",
+										"type": "Datetime"
+									},
+									"Filesdeleted": {
+										"value": "",
+										"type": "String"
+									},
+									"Pipeline": {
+										"value": "",
+										"type": "String"
+									},
+									"PipelineRunID": {
+										"value": "",
+										"type": "String"
+									},
+									"starttime": {
+										"value": "",
+										"type": "Datetime"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "LS_SQLDatabase",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
