@@ -302,11 +302,7 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [
-								{
-									"name": ""
-								}
-							],
+							"userProperties": [],
 							"typeProperties": {
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
