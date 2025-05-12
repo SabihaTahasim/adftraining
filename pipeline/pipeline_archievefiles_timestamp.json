@@ -304,14 +304,13 @@
 							},
 							"userProperties": [
 								{
-									"name": "endtime"
+									"name": ""
 								}
 							],
 							"typeProperties": {
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
 									"endtime": {
-										"value": "@pipeline().parameters.endtime",
 										"type": "Datetime"
 									},
 									"Filesdeleted": {
