@@ -142,7 +142,16 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [],
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "source//@{item().name}"
+								},
+								{
+									"name": "Destination",
+									"value": "archieve/@{concat(formatDateTime(utcnow(),'yyyyMMdd'))}/@{concat(item().name)}"
+								}
+							],
 							"typeProperties": {
 								"source": {
 									"type": "DelimitedTextSource",
@@ -316,7 +325,10 @@
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
 									"endtime": {
-										"value": "source//@{item().name}",
+										"value": {
+											"value": "archieve/@{concat(formatDateTime(utcnow(),'yyyyMMdd'))}/@{concat(item().name)}.endtime",
+											"type": "Expression"
+										},
 										"type": "String"
 									},
 									"Filesdeleted": {
