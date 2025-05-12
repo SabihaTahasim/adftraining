@@ -326,7 +326,7 @@
 								"storedProcedureParameters": {
 									"endtime": {
 										"value": {
-											"value": "archieve/@{concat(formatDateTime(utcnow(),'yyyyMMdd'))}/@{concat(item().name)}.endtime",
+											"value": "source//@{item().name}.endtime",
 											"type": "Expression"
 										},
 										"type": "String"
