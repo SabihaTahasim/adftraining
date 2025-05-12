@@ -325,24 +325,24 @@
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
 									"endtime": {
-										"value": {
-											"value": "source//@{item().name}.endtime",
-											"type": "Expression"
-										},
-										"type": "String"
+										"value": "",
+										"type": "DateTime"
 									},
 									"Filesdeleted": {
+										"value": "",
 										"type": "String"
 									},
 									"Pipeline": {
+										"value": "",
 										"type": "String"
 									},
 									"PipelineRunID": {
+										"value": "",
 										"type": "String"
 									},
 									"starttime": {
 										"value": "",
-										"type": "String"
+										"type": "DateTime"
 									}
 								}
 							},
