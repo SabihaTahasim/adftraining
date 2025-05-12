@@ -62,7 +62,16 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [],
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "source//@{item().name}"
+								},
+								{
+									"name": "Destination",
+									"value": "destination//"
+								}
+							],
 							"typeProperties": {
 								"source": {
 									"type": "DelimitedTextSource",
@@ -307,6 +316,7 @@
 								"storedProcedureName": "[dbo].[usp_auditing]",
 								"storedProcedureParameters": {
 									"endtime": {
+										"value": "source//@{item().name}",
 										"type": "String"
 									},
 									"Filesdeleted": {
