@@ -32,9 +32,16 @@
 				}
 			},
 			{
-				"name": "Get Metadata1",
+				"name": "2nd satge",
 				"type": "GetMetadata",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "1st stage",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -46,7 +53,13 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "ds_source_getmetadata_2nd_stage",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"directoryName": {
+								"value": "@activity('1st stage').output.childItems",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [],
 					"storeSettings": {
