@@ -101,7 +101,21 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
-								"waitOnCompletion": true
+								"pipeline": {
+									"referenceName": "pl_foreachinforeach",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"subdirectory": {
+										"value": "@activity('2nd stage').output.childItems",
+										"type": "Expression"
+									},
+									"Directory": {
+										"value": "@item().name",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					]
