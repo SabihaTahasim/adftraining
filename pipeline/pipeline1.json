@@ -34,7 +34,14 @@
 			{
 				"name": "2nd stage",
 				"type": "GetMetadata",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "1st stage",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -46,9 +53,17 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "ds_source_getmetdate_2nd_stage",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"DirectoryName": {
+								"value": "@activity('1st stage').output.childItems",
+								"type": "Expression"
+							}
+						}
 					},
-					"fieldList": [],
+					"fieldList": [
+						"childItems"
+					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
 						"enablePartitionDiscovery": false
@@ -59,11 +74,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"DirectoryName": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
