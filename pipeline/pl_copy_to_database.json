@@ -107,10 +107,6 @@
 									"referenceName": "ds_generic_tables",
 									"type": "DatasetReference",
 									"parameters": {
-										"Schema": {
-											"value": "@concat('ADF')",
-											"type": "Expression"
-										},
 										"Tablename": {
 											"value": "@first(split(item().name,'.'))",
 											"type": "Expression"
