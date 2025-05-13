@@ -48,6 +48,7 @@
 						"value": "@activity('1st stage').output.childItems",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "2nd stage",
@@ -105,12 +106,12 @@
 							],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "pipeline1pl_getsubdirectory",
+									"referenceName": "pl_getsubdirectory",
 									"type": "PipelineReference"
 								},
 								"waitOnCompletion": false,
 								"parameters": {
-									"SubDirectory": {
+									"Subdirectory": {
 										"value": "@activity('2nd stage').output.childItems",
 										"type": "Expression"
 									},
