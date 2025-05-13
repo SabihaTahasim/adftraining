@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata1",
+				"name": "1st stage",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
