@@ -110,6 +110,10 @@
 										"Tablename": {
 											"value": "@first(split(item().name,'.'))",
 											"type": "Expression"
+										},
+										"Schema": {
+											"value": "@item().name",
+											"type": "Expression"
 										}
 									}
 								}
