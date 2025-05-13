@@ -32,7 +32,7 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "1st Foreach",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -105,13 +105,17 @@
 							],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "pipeline1",
+									"referenceName": "pipeline1pl_getsubdirectory",
 									"type": "PipelineReference"
 								},
 								"waitOnCompletion": false,
 								"parameters": {
 									"SubDirectory": {
 										"value": "@activity('2nd stage').output.childItems",
+										"type": "Expression"
+									},
+									"Directory": {
+										"value": "@item().name",
 										"type": "Expression"
 									}
 								}
