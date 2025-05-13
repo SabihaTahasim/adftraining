@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"SubFolder": {
+			"SubDirectory": {
 				"type": "string"
 			},
 			"Directory": {
