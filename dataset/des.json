@@ -17,6 +17,27 @@
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "DepartmentID",
+				"type": "String"
+			},
+			{
+				"name": "DepartmentName",
+				"type": "String"
+			},
+			{
+				"name": "Manager",
+				"type": "String"
+			},
+			{
+				"name": "Location",
+				"type": "String"
+			},
+			{
+				"name": "Budget",
+				"type": "String"
+			}
+		]
 	}
 }
