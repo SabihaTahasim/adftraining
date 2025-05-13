@@ -58,7 +58,7 @@
 			}
 		],
 		"parameters": {
-			"SubDirectory": {
+			"Subdirectory": {
 				"type": "array"
 			},
 			"Directory": {
