@@ -9,6 +9,11 @@
 				"userProperties": []
 			}
 		],
+		"parameters": {
+			"SubDirectory": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
