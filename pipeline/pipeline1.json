@@ -44,6 +44,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('1st stage').output.childItems",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "2nd stage",
