@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1pl_getsubdirectory",
+	"name": "pl_getsubdirectory",
 	"properties": {
 		"activities": [
 			{
