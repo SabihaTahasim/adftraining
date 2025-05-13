@@ -12,7 +12,7 @@
 						"value": "@pipeline().parameters.SubDirectory",
 						"type": "Expression"
 					},
-					"isSequential": true,
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "3rd stage",
