@@ -108,7 +108,13 @@
 									"referenceName": "pipeline1",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true
+								"waitOnCompletion": false,
+								"parameters": {
+									"SubDirectory": {
+										"value": "@activity('2nd stage').output.childItems",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					]
