@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "ForEach1",
+				"name": "2nd foreach",
 				"type": "ForEach",
 				"dependsOn": [],
 				"userProperties": [],
