@@ -165,6 +165,9 @@
 				}
 			}
 		],
+		"folder": {
+			"name": "copy from blob"
+		},
 		"annotations": []
 	}
 }
