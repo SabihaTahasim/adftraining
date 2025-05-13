@@ -47,6 +47,9 @@
 		"parameters": {
 			"subdirectory": {
 				"type": "array"
+			},
+			"Directory": {
+				"type": "string"
 			}
 		},
 		"annotations": []
