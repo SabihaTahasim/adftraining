@@ -50,7 +50,7 @@
 					},
 					"activities": [
 						{
-							"name": "2nd stage_copy1",
+							"name": "2nd stage",
 							"type": "GetMetadata",
 							"dependsOn": [],
 							"policy": {
@@ -82,6 +82,33 @@
 								"formatSettings": {
 									"type": "DelimitedTextReadSettings"
 								}
+							}
+						},
+						{
+							"name": "3rd stage",
+							"type": "ExecutePipeline",
+							"dependsOn": [
+								{
+									"activity": "2nd stage",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "sub Directory"
+								}
+							],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "pipeline1",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true
 							}
 						}
 					]
