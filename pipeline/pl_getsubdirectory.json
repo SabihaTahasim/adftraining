@@ -32,7 +32,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"SubFolder": {
-											"value": "@pipeline().parameters.SubDirectory",
+											"value": "@pipeline().parameters.Subdirectory",
 											"type": "Expression"
 										},
 										"Directory": {
