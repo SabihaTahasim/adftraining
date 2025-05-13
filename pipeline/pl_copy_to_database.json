@@ -110,6 +110,10 @@
 										"Tablename": {
 											"value": "@first(split(item().name,'.'))",
 											"type": "Expression"
+										},
+										"schema": {
+											"value": "@concat('HRP')",
+											"type": "Expression"
 										}
 									}
 								}
