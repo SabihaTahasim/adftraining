@@ -101,10 +101,20 @@
 							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
-									"referenceName": "pipeline2",
+									"referenceName": "pl_get_subdirectory",
 									"type": "PipelineReference"
 								},
-								"waitOnCompletion": true
+								"waitOnCompletion": true,
+								"parameters": {
+									"subdirectory": {
+										"value": "@activity('2nd stage').output.childItems",
+										"type": "Expression"
+									},
+									"Directory": {
+										"value": "@item().name",
+										"type": "Expression"
+									}
+								}
 							}
 						}
 					]
