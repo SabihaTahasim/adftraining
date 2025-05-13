@@ -30,7 +30,7 @@
 									"referenceName": "ds_foreach_inside_foreach",
 									"type": "DatasetReference",
 									"parameters": {
-										"SubFolder": {
+										"SubDirectory": {
 											"value": "@pipeline().parameters.SubDirectory",
 											"type": "Expression"
 										},
