@@ -6,9 +6,6 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"Schema": {
-				"type": "string"
-			},
 			"Tablename": {
 				"type": "string"
 			}
